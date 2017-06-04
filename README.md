@@ -37,4 +37,5 @@ DO NOT USE IN PRODUCTION THIS IS ONLY CREATED AS AN EXAMPLE.
 * Create Dockerfile for wordpress app.
 * Create ssl cert from AWS Certificate Manager and redirect to https.
 * Create route53 dns and point to ELB.
+* Use autoscalling groups instead of plain ec2
 
