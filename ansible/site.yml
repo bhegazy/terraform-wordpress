@@ -6,3 +6,5 @@
   roles: 
     - { role: common,  tags: common }
     - { role: docker,  tags: docker }
+    - { role: nginx,   tags: nginx  }
+    - { role: deploy,  tags: deploy }
