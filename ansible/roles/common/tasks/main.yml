@@ -1,0 +1,14 @@
+---
+- name: Update apt cache
+  apt: update_cache=yes
+  become: yes
+  
+- name: Install necessities and nice-to-haves
+  apt: pkg={{ item }} state=installed
+  with_items:
+    - git
+    - htop
+    - python-software-properties
+    - curl
+    - unzip
+    - ntp
