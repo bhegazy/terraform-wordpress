@@ -1,0 +1,32 @@
+---
+
+- name: pull mysql image
+  docker_image:
+    name: mysql
+
+- name: pull wordpress image
+  docker_image:
+    name: wordpress
+
+- name: docker run mysql
+  docker_container:
+    name: mysql
+    image: mysql:latest
+    state: started
+    restart_policy: always
+    env:
+      MYSQL_ROOT_PASSWORD: password
+
+- name: docker run wordpress
+  docker_container:
+    name: wordpress
+    image: wordpress:latest
+    state: started
+    restart_policy: always
+    ports:
+      - 8080:80
+    links:
+      - mysql:mysql
+    env:
+      WORDPRESS_DB_PASSWORD: password
+      
