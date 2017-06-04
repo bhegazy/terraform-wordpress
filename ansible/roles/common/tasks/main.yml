@@ -12,3 +12,7 @@
     - curl
     - unzip
     - ntp
+    - python-pip
+
+- name: install docker-py with pip
+  pip: name=docker-py
